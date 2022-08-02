@@ -1,0 +1,5 @@
+package com.ty.contact.service.service;
+
+public interface ContactService {
+	
+}

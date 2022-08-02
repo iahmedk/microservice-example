@@ -1,0 +1,25 @@
+package com.ty.contact.service.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ty.contact.service.dto.Contact;
+import com.ty.contact.service.service.ContactServiceImpl;
+
+@RestController
+@RequestMapping("/contacts")
+public class ContactController {
+
+	@Autowired
+	private ContactServiceImpl serviceImpl;
+
+	@GetMapping("/{userId}")
+	public List<Contact> getContacts(@PathVariable long userId) {
+		return serviceImpl.getContacts(userId);
+	}
+}

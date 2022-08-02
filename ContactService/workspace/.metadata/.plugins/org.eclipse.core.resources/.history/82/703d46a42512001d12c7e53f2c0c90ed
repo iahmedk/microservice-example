@@ -1,0 +1,21 @@
+package com.ty.contact.service.controller;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ty.contact.service.dto.Contact;
+
+@RestController
+@RequestMapping("contacts")
+public class ContactController {
+
+	@GetMapping("/{userId}")
+	public List<Contact> getContacts(@PathVariable int {userId})
+	{
+
+	}
+}

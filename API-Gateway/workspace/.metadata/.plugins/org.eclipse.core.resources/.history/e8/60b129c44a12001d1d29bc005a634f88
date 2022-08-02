@@ -1,0 +1,21 @@
+server:
+  port: 8003
+  
+spring:
+  application:
+    name: api-gateway
+  
+  cloud:
+    gateway:
+      routes:
+      - id: user-service
+        uri: lb//
+          
+      
+    
+eureka:
+  instance:
+    hostname: localhost
+    
+
+

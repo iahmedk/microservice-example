@@ -1,0 +1,26 @@
+server:
+  port: 8003
+  
+spring:
+  application:
+    name: api-gateway
+  
+  cloud:
+    gateway:
+      routes:
+      - id: user-service
+        uri: lb//user-service
+        predicates:
+        - path = /users/**
+        
+      - id: contact-service
+        uri: lb//contact-service
+        predicates:
+        - path = /contacts/**
+            
+eureka:
+  instance:
+    hostname: localhost
+    
+
+

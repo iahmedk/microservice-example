@@ -1,0 +1,22 @@
+package com.ty.contact.service.service;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.springframework.stereotype.Service;
+
+import com.ty.contact.service.dto.Contact;
+
+@Service
+public class ContactServiceImpl implements ContactService {
+
+	List<Contact> contacts = List.of(new Contact(100, "Imtiyaz", "imtiyaz1787@gmail.com", 10),
+			new Contact(101, "Sumith", "sumith@gmail.com", 10), new Contact(102, "Rohan", "rohan@gmail.com", 30),
+			new Contact(104, "Sameer", "sameer@gmail.com", 40));
+
+	@Override
+	public List<Contact> getContacts(long userId) {
+		return contacts.stream().filter(c -> c.getUserId() == userId).collect(Collectors.toList());
+	}
+
+}

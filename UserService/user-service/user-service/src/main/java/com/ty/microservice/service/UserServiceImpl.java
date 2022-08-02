@@ -1,0 +1,21 @@
+package com.ty.microservice.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.ty.microservice.dto.User;
+
+@Service
+public class UserServiceImpl implements UserInterface {
+
+	List<User> list = List.of(new User(10l, "Imtiyaz"), new User(20l, "Farheen"), new User(30l, "Aaira"),
+			new User(40l, "Aariz"));
+
+	@Override
+	public User getUser(int id) {
+
+		return list.stream().filter(u -> u.getId() == id).findAny().orElse(null);
+	}
+
+}

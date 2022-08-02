@@ -1,0 +1,24 @@
+server:
+  port: 8003
+  
+spring:
+  application:
+    name: api-gateway
+
+
+
+  cloud:
+    gateway:
+      routes:
+      - id: user-service
+        uri: https://User-Service
+        predicates:
+        - Path=/users/**
+        
+      - id: contact-service
+        uri: https://Contact-Service
+        predicates:
+        - Path=/contacts/**
+    
+
+
